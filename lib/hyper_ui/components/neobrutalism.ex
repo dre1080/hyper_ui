@@ -170,18 +170,48 @@ defmodule HyperUI.Components.Neobrutalism do
 
   @spec progress(map()) :: Phoenix.LiveView.Rendered.t()
   def progress(assigns) do
+    value = to_float(assigns.value)
+    max = to_float(assigns[:max] || 100)
+
+    percent =
+      if max > 0 do
+        round(max(0.0, min(value / max, 1.0)) * 100)
+      else
+        0
+      end
+
+    assigns = assign(assigns, percent: percent)
+
     ~H"""
-    <div class={@class} {@rest}>
-      <span role="progressbar" class="block border-2 border-black bg-white p-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-        <span
-          class={["block h-4 border-r-2 border-black", button_color_classes(@color)]}
-          style={"width: #{(@value / @max) * 100}%"}
+    <div
+      class={["w-full", @class]}
+      {@rest}
+      role="progressbar"
+      aria-valuenow={@value}
+      aria-valuemin="0"
+      aria-valuemax={@max}
+    >
+      <div class="w-full border-2 border-black bg-white p-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div
+          class={["h-4 transition-all duration-500", button_color_classes(@color)]}
+          style={"width: #{@percent}%;"}
         >
-        </span>
-      </span>
+        </div>
+      </div>
     </div>
     """
   end
+
+  defp to_float(v) when is_number(v), do: v * 1.0
+
+  defp to_float(v) when is_binary(v) do
+    case Float.parse(v) do
+      {f, _} -> f
+      :error -> 0.0
+    end
+  end
+
+  defp to_float(_), do: 0.0
 
   @doc """
   Renders a Neo-Brutalism select.
@@ -340,7 +370,7 @@ defmodule HyperUI.Components.Neobrutalism do
           id={@id}
           name={@name}
           checked={@checked}
-          class="size-5 border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] checked:bg-yellow-400 focus:ring-0 focus:ring-offset-0 appearance-none checked:after:content-['✓'] checked:after:flex checked:after:justify-center checked:after:items-center checked:after:font-bold"
+          class="size-5 border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] checked:bg-yellow-400 focus:ring-0 focus:ring-offset-0 appearance-none checked:after:content-['✓'] checked:after:flex checked:after:justify-center checked:after:items-center checked:after:font-bold checked:after:size-5 checked:after:-mt-0.5 checked:after:-ml-0.5"
           {@rest}
         />
       </div>
