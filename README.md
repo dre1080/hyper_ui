@@ -1,5 +1,8 @@
 # HyperUI
 
+[![Hex version](https://img.shields.io/hexpm/v/hyper_ui.svg "Hex version")](https://hex.pm/packages/hyper_ui)
+[![CI](https://github.com/dre1080/hyper_ui/actions/workflows/ci.yml/badge.svg)](https://github.com/dre1080/hyper_ui/actions/workflows/ci.yml)
+
 A comprehensive, production-grade Phoenix LiveView component library based on [HyperUI](https://www.hyperui.dev/) Tailwind CSS components.
 
 HyperUI provides a set of highly customizable, accessible, and responsive components designed to accelerate your Phoenix LiveView development. It includes everything from core application primitives to full marketing blocks and e-commerce elements.
