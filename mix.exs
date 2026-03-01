@@ -56,15 +56,15 @@ defmodule HyperUI.MixProject do
   defp deps do
     [
       {:phoenix_live_view, "~> 1.0.0-rc or ~> 1.0"},
-      {:phoenix_storybook, "~> 0.8", only: [:dev, :test]},
+      {:phoenix_storybook, "~> 0.8", only: [:docs, :dev, :test]},
       {:heroicons, "~> 0.5.0"},
       {:bandit, "~> 1.5"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:esbuild, "~> 0.8", only: :dev},
       {:tailwind, "~> 0.3", only: :dev},
-      {:jason, "~> 1.2", only: [:dev, :test]},
+      {:jason, "~> 1.2", only: [:docs, :dev, :test]},
       {:floki, ">= 0.30.0", only: :test},
-      {:ex_doc, "~> 0.34", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.34", only: [:docs, :dev], runtime: false}
     ]
   end
 
@@ -86,7 +86,21 @@ defmodule HyperUI.MixProject do
   defp docs do
     [
       main: "readme",
-      extras: ["README.md"]
+      source_ref: "v#{@version}",
+      source_url: @source_url,
+      extras: ["README.md"],
+      groups_for_modules: [
+        Components: [
+          HyperUI.Components.ApplicationUI,
+          HyperUI.Components.ApplicationUI.Forms,
+          HyperUI.Components.Ecommerce,
+          HyperUI.Components.Marketing,
+          HyperUI.Components.Neobrutalism
+        ]
+      ],
+      filter_modules: fn module, _metadata ->
+        !String.starts_with?(to_string(module), "Elixir.HyperUIWeb")
+      end
     ]
   end
 end
