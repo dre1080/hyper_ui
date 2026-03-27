@@ -14,7 +14,7 @@ The package can be installed by adding `hyper_ui` to your list of dependencies i
 ```elixir
 def deps do
   [
-    {:hyper_ui, "~> 0.1.0"}
+    {:hyper_ui, "~> 0.2.0"}
   ]
 end
 ```
@@ -65,7 +65,7 @@ The library is organized into the following modules, all of which are imported w
 - `HyperUI.Components.ApplicationUI.Forms`: Form elements (Inputs, Toggles, etc.)
 - `HyperUI.Components.Marketing`: Page blocks (Heroes, FAQs, Footers, Navbars, Pricing, etc.)
 - `HyperUI.Components.Ecommerce`: E-commerce elements (Product Cards, Carts, etc.)
-- `HyperUI.Components.Neobrutalism`: Components with a Neobrutalist design aesthetic.
+- `HyperUI.Components.Neobrutalism`: Components with a Neobrutalist design aesthetic (prefixed with `neo_`, e.g., `<.neo_button>`).
 
 ## Interactive Documentation (Storybook)
 
@@ -73,12 +73,27 @@ HyperUI includes a [Phoenix Storybook](https://github.com/phenixdigital/phoenix_
 
 To run the storybook directly from the library during development:
 
-```bash
-cd storybook
-mix setup
-mix phx.server
-```
+1.  **Enter the storybook directory**:
+    ```bash
+    cd storybook
+    ```
+2.  **Install dependencies and setup assets**:
+    ```bash
+    mix setup
+    ```
+3.  **Start the Phoenix server**:
+    ```bash
+    mix phx.server
+    ```
 
 Then visit `http://localhost:4000/storybook`.
+
+## Development
+
+If you're contributing to HyperUI, you can run tests for the main library from the root directory:
+
+```bash
+mix test
+```
 
 For detailed API documentation, visit [HexDocs](https://hexdocs.pm/hyper_ui).

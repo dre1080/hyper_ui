@@ -57,7 +57,7 @@ defmodule HyperUI.Storybook.Welcome do
       <p class="text-neutral-600">Add <code class="bg-neutral-100 px-1 rounded text-black font-mono">hyper_ui</code> to your <code class="bg-neutral-100 px-1 rounded text-black font-mono">mix.exs</code> dependencies:</p>
       <pre class="p-4 bg-black text-white rounded-lg overflow-x-auto font-mono text-sm"><code>def deps do
     [
-      {"\{:hyper_ui, \"~> 0.1.0\"\}"}
+      {"\{:hyper_ui, \"~> 0.2.0\"\}"}
     ]
     end</code></pre>
       <p class="text-neutral-600 mt-8">Then import the components in your web module or core components:</p>
