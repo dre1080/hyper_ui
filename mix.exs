@@ -16,52 +16,22 @@ defmodule HyperUI.MixProject do
       package: package(),
       docs: docs(),
       name: "HyperUI",
-      source_url: @source_url,
-      aliases: aliases(),
-      listeners: [Phoenix.CodeReloader]
-    ]
-  end
-
-  defp aliases do
-    [
-      setup: ["deps.get", "assets.setup", "assets.build"],
-      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": [
-        "tailwind default",
-        "esbuild default",
-        "tailwind storybook",
-        "esbuild storybook"
-      ],
-      "assets.deploy": [
-        "tailwind default --minify",
-        "esbuild default --minify",
-        "tailwind storybook --minify",
-        "esbuild storybook --minify",
-        "phx.digest"
-      ]
+      source_url: @source_url
     ]
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(:dev), do: ["lib", "storybook"]
   defp elixirc_paths(_), do: ["lib"]
 
   def application do
     [
-      extra_applications: [:logger],
-      mod: if(Mix.env() == :dev, do: {HyperUI.Application, []}, else: [])
+      extra_applications: [:logger]
     ]
   end
 
   defp deps do
     [
       {:phoenix_live_view, "~> 1.0.0-rc or ~> 1.0"},
-      {:phoenix_storybook, "~> 0.8", only: [:docs, :dev, :test]},
-      {:heroicons, "~> 0.5.0"},
-      {:bandit, "~> 1.5"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:esbuild, "~> 0.8", only: :dev},
-      {:tailwind, "~> 0.3", only: :dev},
       {:jason, "~> 1.2", only: [:docs, :dev, :test]},
       {:floki, ">= 0.30.0", only: :test},
       {:ex_doc, "~> 0.34", only: [:docs, :dev], runtime: false}
@@ -79,7 +49,7 @@ defmodule HyperUI.MixProject do
       maintainers: ["dre1080"],
       licenses: ["MIT"],
       links: %{"GitHub" => @source_url},
-      files: ~w(lib storybook mix.exs README.md LICENSE)
+      files: ~w(lib .formatter.exs mix.exs README.md LICENSE)
     ]
   end
 

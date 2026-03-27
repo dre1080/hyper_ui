@@ -1,5 +1,6 @@
 # The directory Mix will write compiled artifacts to.
 /_build/
+/storybook/_build/
 /.expert/
 /.elixir_ls/
 
@@ -8,15 +9,16 @@
 
 # The directory Mix downloads your dependencies sources to.
 /deps/
+/storybook/deps/
 
 # Where third-party dependencies like ExDoc output generated docs.
 /doc/
 
 # Ignore assets that are produced by build tools.
-/priv/static/assets/
+/storybook/priv/static/assets/
 
 # Ignore digested assets cache.
-/priv/static/cache_manifest.json
+/storybook/priv/static/cache_manifest.json
 
 # Temporary files, for example, from tests.
 /tmp/

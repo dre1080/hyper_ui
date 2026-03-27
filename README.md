@@ -74,6 +74,8 @@ HyperUI includes a [Phoenix Storybook](https://github.com/phenixdigital/phoenix_
 To run the storybook directly from the library during development:
 
 ```bash
+cd storybook
+mix setup
 mix phx.server
 ```
 
