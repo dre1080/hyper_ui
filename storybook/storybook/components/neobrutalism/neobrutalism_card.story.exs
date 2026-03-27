@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismCard do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.card/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_card/1
 
   def variations do
     [

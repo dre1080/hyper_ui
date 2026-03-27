@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismCheckbox do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.checkbox/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_checkbox/1
 
   def variations do
     [

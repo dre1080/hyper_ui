@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismBadge do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.badge/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_badge/1
 
   def variations do
     [

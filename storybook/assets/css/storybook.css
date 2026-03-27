@@ -1,9 +1,9 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-@source "../../lib/hyper_ui/components/**/*.*ex";
-@source "../../lib/hyper_ui_web/**/*.*ex";
-@source "../../storybook/**/*.*exs";
+@source "../../../lib/hyper_ui/components/**/*.*ex";
+@source "../../hyper_ui_web/**/*.*ex";
+@source "../../**/*.exs";
 @source "../js/**/*.js";
 
 @theme {

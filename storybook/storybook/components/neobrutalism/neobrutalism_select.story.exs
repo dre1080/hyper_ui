@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismSelect do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.select/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_select/1
 
   def variations do
     [

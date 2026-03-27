@@ -18,7 +18,6 @@ defmodule HyperUIWeb.Router do
 
   scope "/" do
     pipe_through :browser
-    live_storybook "/storybook", backend_module: HyperUI.Storybook
-    get "/", HyperUIWeb.PageController, :index
+    live_storybook "/", backend_module: HyperUI.Storybook
   end
 end

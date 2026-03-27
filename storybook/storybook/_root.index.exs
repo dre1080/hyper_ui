@@ -10,4 +10,11 @@ defmodule HyperUI.Storybook.Root do
       icon: {:hero, "home"}
     ]
   end
+
+  def entry("components") do
+    [
+      name: "Components",
+      icon: {:hero, "squares_plus"}
+    ]
+  end
 end

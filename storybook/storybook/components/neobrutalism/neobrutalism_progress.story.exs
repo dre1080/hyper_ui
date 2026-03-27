@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismProgress do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.progress/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_progress/1
 
   def variations do
     [

@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismAccordion do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.accordion/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_accordion/1
 
   def variations do
     [

@@ -1,6 +1,6 @@
 defmodule HyperUI.Storybook do
   use PhoenixStorybook,
-    otp_app: :hyper_ui,
+    otp_app: :hyper_ui_storybook,
     title: "HyperUI",
     content_path: Path.expand("../storybook", __DIR__),
     js_path: "/assets/js/storybook.js",

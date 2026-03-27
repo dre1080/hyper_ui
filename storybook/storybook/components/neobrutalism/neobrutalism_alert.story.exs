@@ -1,7 +1,7 @@
 defmodule HyperUI.Storybook.NeobrutalismAlert do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &HyperUI.Components.Neobrutalism.alert/1
+  def function, do: &HyperUI.Components.Neobrutalism.neo_alert/1
 
   def variations do
     [

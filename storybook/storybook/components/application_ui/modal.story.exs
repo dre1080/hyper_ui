@@ -1,6 +1,5 @@
 defmodule HyperUI.Storybook.Modal do
   use PhoenixStorybook.Story, :component
-  alias Phoenix.LiveView.JS
 
   def function, do: &HyperUI.Components.ApplicationUI.modal/1
 

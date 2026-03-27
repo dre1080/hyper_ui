@@ -1,5 +1,5 @@
 defmodule HyperUIWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :hyper_ui
+  use Phoenix.Endpoint, otp_app: :hyper_ui_storybook
 
   @session_options [
     store: :cookie,
@@ -11,7 +11,7 @@ defmodule HyperUIWeb.Endpoint do
 
   plug Plug.Static,
     at: "/",
-    from: :hyper_ui,
+    from: :hyper_ui_storybook,
     gzip: false,
     only: ~w(assets favicon.ico robots.txt)
 
