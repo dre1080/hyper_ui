@@ -27,8 +27,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :rest, :global
   slot :inner_block, required: true
 
-  @spec button(map()) :: Phoenix.LiveView.Rendered.t()
-  def button(assigns) do
+  @spec neo_button(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_button(assigns) do
     ~H"""
     <button
       type={@type}
@@ -73,8 +73,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :class, :string, default: nil
   attr :rest, :global
 
-  @spec input(map()) :: Phoenix.LiveView.Rendered.t()
-  def input(assigns) do
+  @spec neo_input(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_input(assigns) do
     ~H"""
     <div class={@class}>
       <%= if @label do %>
@@ -104,8 +104,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :rest, :global
   slot :inner_block, required: true
 
-  @spec badge(map()) :: Phoenix.LiveView.Rendered.t()
-  def badge(assigns) do
+  @spec neo_badge(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_badge(assigns) do
     ~H"""
     <span
       class={[
@@ -129,8 +129,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :rest, :global
   slot :inner_block, required: true
 
-  @spec accordion(map()) :: Phoenix.LiveView.Rendered.t()
-  def accordion(assigns) do
+  @spec neo_accordion(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_accordion(assigns) do
     ~H"""
     <details
       class={[
@@ -168,8 +168,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :class, :string, default: nil
   attr :rest, :global
 
-  @spec progress(map()) :: Phoenix.LiveView.Rendered.t()
-  def progress(assigns) do
+  @spec neo_progress(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_progress(assigns) do
     value = to_float(assigns.value)
     max = to_float(assigns[:max] || 100)
 
@@ -223,8 +223,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :rest, :global
   slot :inner_block, required: true
 
-  @spec select(map()) :: Phoenix.LiveView.Rendered.t()
-  def select(assigns) do
+  @spec neo_select(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_select(assigns) do
     ~H"""
     <div class={@class}>
       <%= if @label do %>
@@ -253,8 +253,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :class, :string, default: nil
   attr :rest, :global
 
-  @spec textarea(map()) :: Phoenix.LiveView.Rendered.t()
-  def textarea(assigns) do
+  @spec neo_textarea(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_textarea(assigns) do
     ~H"""
     <div class={@class}>
       <%= if @label do %>
@@ -284,8 +284,8 @@ defmodule HyperUI.Components.Neobrutalism do
     attr :color, :string
   end
 
-  @spec tabs(map()) :: Phoenix.LiveView.Rendered.t()
-  def tabs(assigns) do
+  @spec neo_tabs(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_tabs(assigns) do
     ~H"""
     <div class={["flex flex-wrap gap-4 border-b-2 border-black pb-4", @class]} {@rest}>
       <%= for tab <- @tab do %>
@@ -313,8 +313,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :rest, :global
   slot :inner_block, required: true
 
-  @spec alert(map()) :: Phoenix.LiveView.Rendered.t()
-  def alert(assigns) do
+  @spec neo_alert(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_alert(assigns) do
     ~H"""
     <div
       role="alert"
@@ -359,8 +359,8 @@ defmodule HyperUI.Components.Neobrutalism do
   attr :class, :string, default: nil
   attr :rest, :global
 
-  @spec checkbox(map()) :: Phoenix.LiveView.Rendered.t()
-  def checkbox(assigns) do
+  @spec neo_checkbox(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_checkbox(assigns) do
     ~H"""
     <label for={@id} class={["flex cursor-pointer items-start gap-4", @class]}>
       <div class="flex items-center">
@@ -393,8 +393,8 @@ defmodule HyperUI.Components.Neobrutalism do
   slot :inner_block, required: true
   slot :footer
 
-  @spec card(map()) :: Phoenix.LiveView.Rendered.t()
-  def card(assigns) do
+  @spec neo_card(map()) :: Phoenix.LiveView.Rendered.t()
+  def neo_card(assigns) do
     ~H"""
     <article
       class={[

@@ -9,7 +9,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.button>Neobrutalism</.button>
+      <.neo_button>Neobrutalism</.neo_button>
       """)
 
     assert html =~ "border-2 border-black"
@@ -21,7 +21,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.badge>NeoBadge</.badge>
+      <.neo_badge>NeoBadge</.neo_badge>
       """)
 
     assert html =~ "border-2 border-black"
@@ -33,7 +33,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.input id="neo_input" name="neo" />
+      <.neo_input id="neo_input" name="neo" />
       """)
 
     assert html =~ "border-2 border-black"
@@ -45,9 +45,9 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.accordion title="Neo FAQ" open={true}>
+      <.neo_accordion title="Neo FAQ" open={true}>
         Bold content here.
-      </.accordion>
+      </.neo_accordion>
       """)
 
     assert html =~ "Neo FAQ"
@@ -60,7 +60,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.progress value={60} max={100} color="emerald" />
+      <.neo_progress value={60} max={100} color="emerald" />
       """)
 
     assert html =~ "progressbar"
@@ -74,9 +74,9 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.select id="neo_select" name="neo_select" label="Pick one">
+      <.neo_select id="neo_select" name="neo_select" label="Pick one">
         <option value="1">Option 1</option>
-      </.select>
+      </.neo_select>
       """)
 
     assert html =~ "Pick one"
@@ -89,7 +89,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.textarea id="neo_text" name="neo_text" label="Message" rows={5} />
+      <.neo_textarea id="neo_text" name="neo_text" label="Message" rows={5} />
       """)
 
     assert html =~ "Message"
@@ -102,10 +102,10 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.tabs>
+      <.neo_tabs>
         <:tab title="Tab A" active={true} color="cyan" />
         <:tab title="Tab B" />
-      </.tabs>
+      </.neo_tabs>
       """)
 
     assert html =~ "Tab A"
@@ -118,7 +118,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.alert kind="error" title="Stop!">Dangerous action</.alert>
+      <.neo_alert kind="error" title="Stop!">Dangerous action</.neo_alert>
       """)
 
     assert html =~ "Stop!"
@@ -131,7 +131,7 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.checkbox id="neo_check" name="neo_check" label="Accept" checked={true} />
+      <.neo_checkbox id="neo_check" name="neo_check" label="Accept" checked={true} />
       """)
 
     assert html =~ "Accept"
@@ -144,12 +144,12 @@ defmodule HyperUI.Components.NeobrutalismTest do
 
     html =
       rendered_to_string(~H"""
-      <.card title="Brutal Card" category="Design">
+      <.neo_card title="Brutal Card" category="Design">
         Nice content.
         <:footer>
           <a href="#">Read More</a>
         </:footer>
-      </.card>
+      </.neo_card>
       """)
 
     assert html =~ "Brutal Card"
